@@ -50,9 +50,9 @@ def main() -> None:
         rows.append(
             "<tr>"
             f"<td>{i}</td>"
-            f'<td><a class="open" href="{line}">Open</a></td>'
-            f'<td><a class="open alt" href="{tme_link}">t.me link</a></td>'
-            f'<td><button class="copy" data-link="{line}">Copy</button></td>'
+            f'<td><a class="open" href="{tme_link}">Open</a></td>'
+            f'<td><a class="open alt" href="{line}">tg:// link</a></td>'
+            f'<td><button class="copy" data-link="{tme_link}">Copy</button></td>'
             "</tr>"
         )
 
@@ -78,7 +78,7 @@ def main() -> None:
   <h1>🌐 MTProto Proxy List</h1>
   <p class="meta">Auto-updated: {timestamp} &middot; Total proxies: {len(lines)}</p>
   <table>
-    <tr><th>#</th><th>tg:// link</th><th>t.me link</th><th>Copy</th></tr>
+    <tr><th>#</th><th>Open (t.me)</th><th>tg:// (اگر t.me فیلتر بود)</th><th>Copy</th></tr>
     {''.join(rows)}
   </table>
   <script>
