@@ -1,0 +1,41 @@
+name: Sync MTProto Proxies
+
+on:
+  schedule:
+    - cron: '0 */12 * * *'   # every 12 hours (00:00 and 12:00 UTC)
+  workflow_dispatch:          # allows manual trigger from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Download latest proxy list from upstream
+        run: |
+          curl -sSL -o all_proxies.txt \
+            https://raw.githubusercontent.com/SoliSpirit/mtproto/master/all_proxies.txt
+
+      - name: Generate Markdown, HTML and index.html
+        run: python3 scripts/generate_lists.py
+
+      - name: Commit and push if anything changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add all_proxies.txt all_proxies.md all_proxies.html index.html
+          if git diff --cached --quiet; then
+            echo "No changes — upstream list is the same."
+          else
+            git commit -m "Auto-sync proxy list ($(date -u +'%Y-%m-%d %H:%M UTC'))"
+            git push
+          fi
