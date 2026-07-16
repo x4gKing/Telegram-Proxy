@@ -10,7 +10,7 @@
 
 می‌توانید پروکسی‌ها را از اینجا ببینید:
 
-👉 **[https://hdsvdjhdvbjdd.github.io/PROXY/all_proxies.html](https://hdsvdjhdvbjdd.github.io/PROXY/all_proxies.html)**
+👉 **[https://hdsvdjhdvbjdd.github.io/PROXY/all_proxies.html]([https://x4gking.github.io/Telegram-Proxy/))**
 
 فقط کافی است وارد صفحه شوید، روی یکی از لینک‌های **Open** کلیک کنید — تلگرام به‌صورت خودکار پیشنهاد می‌دهد که آن پروکسی فعال شود.
 
