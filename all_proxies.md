@@ -1,6 +1,6 @@
 # 🌐 MTProto Proxy List
 
-Auto-updated: **2026-07-28 10:11 UTC**  
+Auto-updated: **2026-07-28 17:12 UTC**  
 Total proxies: **201**
 
 Click any link below to open it in Telegram:
